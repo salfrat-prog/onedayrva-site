@@ -569,6 +569,108 @@ header.hero-monument::after{
 .accordion-item summary{ flex-wrap: wrap; row-gap: 6px; }
 .accordion-item summary .summary-text{ display: flex; align-items: center; }
 
+/* ---------- Search (Repair Fair directory) ---------- */
+.search-block{ padding-top: 8px; padding-bottom: 8px; }
+.search-box{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 10px 16px;
+  max-width: 480px;
+}
+.search-box svg{ flex: none; opacity: 0.6; color: var(--ink-faint); }
+.search-box input{
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  color: var(--ink);
+  width: 100%;
+}
+.search-box input::placeholder{ color: var(--ink-faint); }
+#result-count{
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Organization directory (Repair Fair) ---------- */
+.org-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+@media (max-width: 720px){ .org-grid{ grid-template-columns: 1fr; } }
+.org-card{
+  background: var(--paper-raised);
+  padding: 26px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background-color 0.15s ease;
+}
+.org-card.is-hidden{ display: none; }
+.org-head{ display: flex; align-items: center; gap: 18px; }
+.org-logo{
+  flex: none;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 6px;
+}
+.org-name{
+  font-family: "Big Shoulders Display", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 21px;
+  line-height: 1.12;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.org-desc{ color: var(--ink-soft); font-size: 15.5px; line-height: 1.6; margin: 0; }
+.org-links{ margin-top: auto; padding-top: 6px; display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.org-links a{
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12.5px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  padding-bottom: 1px;
+}
+.org-links a:hover{ border-color: var(--thread-soft); }
+
+.empty-state{
+  padding: 40px 0;
+  text-align: center;
+  color: var(--ink-faint);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 14px;
+  display: none;
+}
+.empty-state.show{ display: block; }
+
+/* ---------- Honor roll (dense name list) ---------- */
+.honor-roll{ columns: 3 200px; column-gap: 28px; }
+@media (max-width: 640px){ .honor-roll{ columns: 1; } }
+.honor-roll .name{
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  break-inside: avoid;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+}
+
 /* ---------- Gallery (Looking Back) ---------- */
 .gallery-grid{
   display: grid;
