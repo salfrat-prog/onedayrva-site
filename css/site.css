@@ -19,6 +19,13 @@
   --line: #C9BEA6;
   --line-strong: #A99C7C;
   --shadow: rgba(36,35,46,0.10);
+
+  /* The Lament / Repent / Forgive triad — carried over from the original
+     site's monument-pedestal mark, where each word had its own color.
+     Reused as a recurring, content-encoded accent (not decorative). */
+  --lament: #4E86C6;
+  --repent: #D6A727;
+  --forgive: #3A6E68;
 }
 
 @media (prefers-color-scheme: dark){
@@ -36,6 +43,9 @@
     --line: #3B3849;
     --line-strong: #504C63;
     --shadow: rgba(0,0,0,0.35);
+    --lament: #7EA9DC;
+    --repent: #E8C158;
+    --forgive: #7FBBB2;
   }
 }
 :root[data-theme="dark"]{
@@ -52,6 +62,9 @@
   --line: #3B3849;
   --line-strong: #504C63;
   --shadow: rgba(0,0,0,0.35);
+  --lament: #7EA9DC;
+  --repent: #E8C158;
+  --forgive: #7FBBB2;
 }
 
 *{ box-sizing: border-box; }
@@ -432,4 +445,143 @@ footer.site-footer{
   font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
   color: var(--ink-faint);
+}
+
+/* ---------- Monument hero (dark, textured — deliberately fixed-palette,
+   independent of light/dark viewer theme, evoking the original mark) ---------- */
+header.hero-monument{
+  position: relative;
+  background: #121016;
+  color: #F2EEE3;
+  padding: 76px 0 64px;
+  overflow: hidden;
+  isolation: isolate;
+}
+header.hero-monument::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.09) 0.6px, transparent 0.6px),
+    radial-gradient(rgba(255,255,255,0.05) 0.6px, transparent 0.6px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 2px 3px;
+}
+header.hero-monument::after{
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 620px; height: 620px;
+  transform: translate(-50%, -46%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242,238,227,0.14) 0%, rgba(242,238,227,0.05) 55%, transparent 72%);
+  z-index: 0;
+}
+.hero-monument .wrap{ position: relative; z-index: 1; text-align: center; }
+.hero-monument .eyebrow{ color: var(--repent); }
+.hero-monument h1.title{ color: #F8F5EC; }
+.hero-monument .lede{ color: #C7C2B4; margin-left: auto; margin-right: auto; }
+.hero-monument .meta-row{ justify-content: center; color: #9C978A; }
+.hero-monument .btn-row{ justify-content: center; }
+
+.plinth{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin: 34px auto 30px;
+}
+.plinth-block{
+  font-family: "Big Shoulders Display", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 17px;
+  color: #14131A;
+  padding: 9px 0;
+  text-align: center;
+}
+.plinth-block.lament{ background: var(--lament); width: 220px; }
+.plinth-block.repent{ background: var(--repent); width: 268px; }
+.plinth-block.forgive{ background: var(--forgive); color: #F2EEE3; width: 316px; }
+.plinth-base{
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9C978A;
+  width: 316px;
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(242,238,227,0.25);
+}
+
+/* ---------- Photo & video frames ---------- */
+.photo-frame{
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--paper-deep);
+}
+.photo-frame img{ width: 100%; height: 100%; object-fit: cover; }
+.photo-caption{
+  margin: 10px 0 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+.video-frame{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #14131A;
+}
+.video-frame iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- Theology tag chips (Lament / Repent / Forgive / Heal) ---------- */
+.theo-tag{
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-right: 10px;
+  color: #14131A;
+}
+.theo-tag.lament{ background: var(--lament); }
+.theo-tag.repent{ background: var(--repent); }
+.theo-tag.forgive{ background: var(--forgive); color: #F2EEE3; }
+.theo-tag.heal{ background: var(--accent-soft); color: #14131A; }
+.accordion-item summary{ flex-wrap: wrap; row-gap: 6px; }
+.accordion-item summary .summary-text{ display: flex; align-items: center; }
+
+/* ---------- Gallery (Looking Back) ---------- */
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 640px){ .gallery-grid{ grid-template-columns: 1fr; } }
+.gallery-item p.photo-caption{ max-width: 46ch; }
+.year-marker{
+  font-family: "Big Shoulders Display", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--thread);
+  margin: 0 0 14px;
 }
