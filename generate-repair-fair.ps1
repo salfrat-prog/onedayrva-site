@@ -43,14 +43,14 @@ $page = @"
 
 <nav class="site" aria-label="Primary">
   <div class="wrap">
-    <a class="site-brand" href="index.html">One Day, One Step</a>
+    <a class="site-brand" href="https://www.onedayrva.org" target="_blank" rel="noopener">One Day, One Step</a>
     <div class="site-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="https://www.onedayrva.org" target="_blank" rel="noopener">Home</a>
+      <a href="https://www.onedayrva.org" target="_blank" rel="noopener">About</a>
       <a href="https://www.onedayrva.org/event-details/one-day-one-step-2026" target="_blank" rel="noopener">Event</a>
       <a href="repair-fair.html" aria-current="page">Repair Fair</a>
-      <a href="get-involved.html">Get Involved</a>
-      <a href="looking-back.html">Looking Back</a>
+      <a href="https://www.onedayrva.org" target="_blank" rel="noopener">Sponsors</a>
+      <a href="http://www.renewingrva.org" target="_blank" rel="noopener">Donate</a>
       <a href="mailto:renewingrva@gmail.com">Contact</a>
     </div>
     <a class="site-cta" href="https://www.onedayrva.org/event-details/one-day-one-step-2026" target="_blank" rel="noopener">Register</a>
@@ -115,11 +115,10 @@ $cardsHtml    </div>
     <div>
       <p class="footer-label">Site</p>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="https://www.onedayrva.org" target="_blank" rel="noopener">Home</a>
+        <a href="https://www.onedayrva.org" target="_blank" rel="noopener">About</a>
         <a href="https://www.onedayrva.org/event-details/one-day-one-step-2026" target="_blank" rel="noopener">Event &amp; Register</a>
-        <a href="get-involved.html">Get Involved</a>
-        <a href="looking-back.html">Looking Back</a>
+        <a href="http://www.renewingrva.org" target="_blank" rel="noopener">Donate</a>
       </nav>
     </div>
     <div>
