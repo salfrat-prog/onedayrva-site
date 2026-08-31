@@ -16,6 +16,7 @@ foreach ($o in $orgs) {
   [void]$cards.AppendLine("          <h3 class=`"org-name`">$(Enc($o.name))</h3>")
   [void]$cards.AppendLine("        </div>")
   [void]$cards.AppendLine("        <p class=`"org-desc`">$(Enc($o.desc))</p>")
+  [void]$cards.AppendLine("        <button class=`"org-toggle`" type=`"button`">Read more +</button>")
   [void]$cards.AppendLine("        <div class=`"org-links`">")
   foreach ($l in $o.links) {
     [void]$cards.AppendLine("          <a href=`"$($l.href)`" target=`"_blank`" rel=`"noopener`">$(Enc($l.text))</a>")
@@ -225,22 +226,26 @@ $cardsHtml    </div>
     <div class="card-grid">
       <div class="card">
         <p class="card-title">CCDA National Conference</p>
-        <p>Christian Community Development Association&rsquo;s annual gathering, Richmond, Oct 7&ndash;10, 2026.</p>
+        <p class="card-date mono">OCT 7&ndash;10, 2026</p>
+        <p>Christian Community Development Association&rsquo;s annual gathering, held in Richmond this year.</p>
         <a class="card-link mono" href="https://ccda.org/train-connect/ccda-national-conference/" target="_blank" rel="noopener">Learn more &rarr;</a>
       </div>
       <div class="card">
         <p class="card-title">Amazing Praise</p>
-        <p>A celebration of worship and community from a fellow Richmond ministry partner.</p>
+        <p class="card-date mono">SEPT 15&ndash;17, 2026</p>
+        <p>A 48-hour celebration of collaborative giving to Christian nonprofits across Richmond.</p>
         <a class="card-link mono" href="https://www.theamazingpraise.org/" target="_blank" rel="noopener">Learn more &rarr;</a>
       </div>
       <div class="card">
         <p class="card-title">Justice Fast RVA</p>
-        <p>The post-event fast, praying and fasting for justice and healing in our city.</p>
+        <p class="card-date mono">DATES TBA</p>
+        <p>Praying and fasting for justice and healing in our city.</p>
         <a class="card-link mono" href="https://justicefastrva.org/" target="_blank" rel="noopener">Learn more &rarr;</a>
       </div>
       <div class="card">
         <p class="card-title">One Day, One Step 2027</p>
-        <p>Save the date &mdash; details for next year&rsquo;s gathering will be posted on the main site.</p>
+        <p class="card-date mono">SEPT 11, 2027</p>
+        <p>Save the date &mdash; more details will be posted on the main site closer to the event.</p>
         <a class="card-link mono" href="https://www.onedayrva.org" target="_blank" rel="noopener">Visit onedayrva.org &rarr;</a>
       </div>
     </div>
@@ -294,6 +299,22 @@ $cardsHtml    </div>
 
   input.addEventListener('input', render);
   render();
+
+  // Collapsible org descriptions: hide the toggle on cards short enough
+  // that clamping never truncated them, and wire up the rest.
+  cards.forEach(function(card){
+    var desc = card.querySelector('.org-desc');
+    var toggle = card.querySelector('.org-toggle');
+    if (!desc || !toggle) return;
+    if (desc.scrollHeight <= desc.clientHeight + 1) {
+      toggle.hidden = true;
+      return;
+    }
+    toggle.addEventListener('click', function(){
+      var expanded = card.classList.toggle('expanded');
+      toggle.textContent = expanded ? 'Show less -' : 'Read more +';
+    });
+  });
 })();
 </script>
 

@@ -376,6 +376,13 @@ h2.section-title{
   margin: 0;
 }
 .card p{ color: var(--ink-soft); font-size: 15.5px; margin: 0; }
+.card-date{
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--thread);
+  margin: -4px 0 0;
+}
 .card a.card-link{
   margin-top: auto;
   font-family: "IBM Plex Mono", monospace;
@@ -648,7 +655,33 @@ header.hero-monument::after{
   letter-spacing: 0.01em;
   margin: 0;
 }
-.org-desc{ color: var(--ink-soft); font-size: 15.5px; line-height: 1.6; margin: 0; }
+.org-desc{
+  color: var(--ink-soft);
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.org-card.expanded .org-desc{
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+.org-toggle{
+  align-self: flex-start;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: -6px 0 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12.5px;
+  color: var(--accent);
+  cursor: pointer;
+}
+.org-toggle:hover{ color: var(--thread); }
+.org-toggle[hidden]{ display: none; }
 .org-links{ margin-top: auto; padding-top: 6px; display: flex; flex-wrap: wrap; gap: 8px 14px; }
 .org-links a{
   font-family: "IBM Plex Mono", monospace;
