@@ -252,6 +252,32 @@ header.masthead{
   color: var(--thread);
   font-weight: 600;
 }
+.masthead-head{
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.masthead-logo-frame{
+  flex: none;
+  height: clamp(90px, 16vw, 168px);
+  width: clamp(90px, 16vw, 168px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+}
+.masthead-logo-frame img{
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
+@media (max-width: 560px){
+  .masthead-head{ gap: 16px; }
+}
 h1.title{
   font-family: "Big Shoulders Display", "Arial Narrow", sans-serif;
   font-weight: 800;
