@@ -41,9 +41,21 @@
 </nav>
 
 <div class="wrap search-block">
-  <div class="search-box">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input id="search" type="text" placeholder="Search by name, focus area, or keyword&hellip;" aria-label="Search organizations">
+  <div class="search-row">
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search" type="text" placeholder="Search by name, focus area, or keyword&hellip;" aria-label="Search organizations">
+    </div>
+    <select id="category-filter" class="category-select" aria-label="Filter by category">
+      <option value="">All Categories</option>
+      <option value="education">Education</option>
+      <option value="housing">Housing</option>
+      <option value="health-healing">Health &amp; Healing</option>
+      <option value="basic-needs">Basic Needs</option>
+      <option value="youth-family">Youth &amp; Family</option>
+      <option value="racial-reconciliation">Racial Reconciliation &amp; Justice</option>
+      <option value="leadership-community">Leadership &amp; Community</option>
+    </select>
   </div>
   <p id="result-count" class="mono"></p>
 </div>
@@ -58,7 +70,7 @@
   </div>
   <div class="wrap">
     <div class="org-grid" id="org-grid">
-      <article class="org-card" data-search="imago dei neighborhood school imago dei opened in september 2021 with 34 students; today, the school serves 155 diverse students in prek-8th grade from across the richmond area, with a particular focus on the northside, east end, and eastern henrico county. imago dei exists to offer a vibrant, rigorous, and holistic christian education to economically and racially diverse families, with a particular focus on those families who have historically been disenfranchised from educational options. imago dei intentionally seeks to disrupt the pervasive, destructive legacy of hypersegregation by race and class in richmond&#39;s educational ecosystem. our educational model is rooted in the understanding that children are whole persons, each uniquely and beautifully reflecting their creator.">
+      <article class="org-card" data-search="imago dei neighborhood school imago dei opened in september 2021 with 34 students; today, the school serves 155 diverse students in prek-8th grade from across the richmond area, with a particular focus on the northside, east end, and eastern henrico county. imago dei exists to offer a vibrant, rigorous, and holistic christian education to economically and racially diverse families, with a particular focus on those families who have historically been disenfranchised from educational options. imago dei intentionally seeks to disrupt the pervasive, destructive legacy of hypersegregation by race and class in richmond&#39;s educational ecosystem. our educational model is rooted in the understanding that children are whole persons, each uniquely and beautifully reflecting their creator." data-categories="education">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/imago-dei-neighborhood-school.png" alt="Imago Dei Neighborhood School logo" loading="lazy">
           <h3 class="org-name">Imago Dei Neighborhood School</h3>
@@ -69,7 +81,7 @@
           <a href="http://imagodeirichmond.org" target="_blank" rel="noopener">imagodeirichmond.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="belmont community resource services belmont community resource services, where all are warmly welcome, operates the largest food pantry in the city of richmond, serving over 700 families every week. the closet at belmont also provides clothing, housewares, and children&#39;s items to those in need, distributing nearly 130,000 items last year alone. together with our donors, partners, and volunteers, the belmont food pantry and the closet at belmont are changing and sustaining thousands of lives in our community, not only feeding and clothing bodies, but nourishing minds and uplifting spirits as well.">
+      <article class="org-card" data-search="belmont community resource services belmont community resource services, where all are warmly welcome, operates the largest food pantry in the city of richmond, serving over 700 families every week. the closet at belmont also provides clothing, housewares, and children&#39;s items to those in need, distributing nearly 130,000 items last year alone. together with our donors, partners, and volunteers, the belmont food pantry and the closet at belmont are changing and sustaining thousands of lives in our community, not only feeding and clothing bodies, but nourishing minds and uplifting spirits as well." data-categories="basic-needs">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/belmont-community-resource-services.png" alt="Belmont Community Resource Services logo" loading="lazy">
           <h3 class="org-name">Belmont Community Resource Services</h3>
@@ -80,7 +92,7 @@
           <a href="https://bcrsrva.org/" target="_blank" rel="noopener">bcrsrva.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="urban hope founded in 2000, urban hope is a housing non-profit that partners with clients to gain financial health; secure safe, quality, affordable rental housing; and chart pathways to homeownership. our work is inspired by christian faith, led by and centered on residents, and focused on the east end of richmond, va. in our rapidly changing neighborhood, we prioritize racial equity, are committed to anti-displacement practices and policies, and seek to repair past housing injustices and build towards an inclusive community where everyone can find a home.">
+      <article class="org-card" data-search="urban hope founded in 2000, urban hope is a housing non-profit that partners with clients to gain financial health; secure safe, quality, affordable rental housing; and chart pathways to homeownership. our work is inspired by christian faith, led by and centered on residents, and focused on the east end of richmond, va. in our rapidly changing neighborhood, we prioritize racial equity, are committed to anti-displacement practices and policies, and seek to repair past housing injustices and build towards an inclusive community where everyone can find a home." data-categories="housing">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/urban-hope.png" alt="Urban Hope logo" loading="lazy">
           <h3 class="org-name">Urban Hope</h3>
@@ -91,7 +103,7 @@
           <a href="http://urbanhoperva.org" target="_blank" rel="noopener">urbanhoperva.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="into the neighborhood into the neighborhood, based on john 1:14 msg, exists to love god, love people and equip others to do the same. we&#39;d love to see mobilized, prepared people live out god&#39;s mission for their lives and reclaim, restore, and rebuild the landscape of their community - one neighborhood at a time. join us in loving the substance use disorder recovery community of metro richmond.">
+      <article class="org-card" data-search="into the neighborhood into the neighborhood, based on john 1:14 msg, exists to love god, love people and equip others to do the same. we&#39;d love to see mobilized, prepared people live out god&#39;s mission for their lives and reclaim, restore, and rebuild the landscape of their community - one neighborhood at a time. join us in loving the substance use disorder recovery community of metro richmond." data-categories="health-healing">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/into-the-neighborhood.png" alt="Into The Neighborhood logo" loading="lazy">
           <h3 class="org-name">Into The Neighborhood</h3>
@@ -102,7 +114,7 @@
           <a href="http://intotheneighborhood.org" target="_blank" rel="noopener">intotheneighborhood.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="crossover healthcare ministry crossover healthcare ministry provides high-quality, compassionate healthcare to uninsured and medicaid patients in central virginia. as the largest charitable clinic in virginia, crossover serves more than 7,000 patients each year at its 2 locations in richmond and henrico. through the service of more than 500 volunteers crossover provides primary care for adults and children, as well as in-house dental, vision, mental health, and pharmacy services. this fall, crossover will open a first-of-its-kind maternal child clinic, providing innovative care for pregnant and post-partum mothers and their children in the same clinic space.">
+      <article class="org-card" data-search="crossover healthcare ministry crossover healthcare ministry provides high-quality, compassionate healthcare to uninsured and medicaid patients in central virginia. as the largest charitable clinic in virginia, crossover serves more than 7,000 patients each year at its 2 locations in richmond and henrico. through the service of more than 500 volunteers crossover provides primary care for adults and children, as well as in-house dental, vision, mental health, and pharmacy services. this fall, crossover will open a first-of-its-kind maternal child clinic, providing innovative care for pregnant and post-partum mothers and their children in the same clinic space." data-categories="health-healing">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/crossover-healthcare-ministry.png" alt="CrossOver Healthcare Ministry logo" loading="lazy">
           <h3 class="org-name">CrossOver Healthcare Ministry</h3>
@@ -113,7 +125,7 @@
           <a href="http://crossoverministry.org" target="_blank" rel="noopener">crossoverministry.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="st. paul&#39;s racial justice and healing ministry st. paul&#39;s episcopal church&#39;s racial justice and healing ministry team (rjh) was formed in 2023 to live into our call to be repairers of the breach after the congregation underwent a multi-year process with the history and reconciliation initiative to uncover, examine, confess, and tell the truth about st. paul&#39;s racial history. the mission of our rjh team is, with god&#39;s help, to continue to uncover the truth, create trust, heal wounds, build racial equity to repair and transform ourselves, our community, and unjust social systems in richmond and beyond. throughout the year, we offer many opportunities for learning and reflecting on racism and racial justice, principally through walking with the enslaved: a pilgrimage toward truth, reconciliation, and hope in richmond, virginia, a joint project of st. philip&#39;s and st. paul&#39;s episcopal church.">
+      <article class="org-card" data-search="st. paul&#39;s racial justice and healing ministry st. paul&#39;s episcopal church&#39;s racial justice and healing ministry team (rjh) was formed in 2023 to live into our call to be repairers of the breach after the congregation underwent a multi-year process with the history and reconciliation initiative to uncover, examine, confess, and tell the truth about st. paul&#39;s racial history. the mission of our rjh team is, with god&#39;s help, to continue to uncover the truth, create trust, heal wounds, build racial equity to repair and transform ourselves, our community, and unjust social systems in richmond and beyond. throughout the year, we offer many opportunities for learning and reflecting on racism and racial justice, principally through walking with the enslaved: a pilgrimage toward truth, reconciliation, and hope in richmond, virginia, a joint project of st. philip&#39;s and st. paul&#39;s episcopal church." data-categories="racial-reconciliation">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/st-paul-s-racial-justice-and-healing-ministry.png" alt="St. Paul&#39;s Racial Justice and Healing Ministry logo" loading="lazy">
           <h3 class="org-name">St. Paul&#39;s Racial Justice and Healing Ministry</h3>
@@ -125,7 +137,7 @@
           <a href="https://walkingwiththeenslaved.org/" target="_blank" rel="noopener">walkingwiththeenslaved.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="rcli (richmond christian leadership initiative) we want to see metro richmond thrive - all people, in all places - for god&#39;s glory. rcli equips, connects, and mobilizes a network of gospel-centered leaders who pursue a thriving metro richmond, together. we do this primarily through our flagship, 9-month fellowship program, designed for emerging, gospel-centered leaders who want to connect their faith with the needs of metro richmond. over the course of 19 years, rcli has commissioned 17 classes with a total of 391 alumni, now leading in churches, nonprofits, business, education, philanthropy, and public office.">
+      <article class="org-card" data-search="rcli (richmond christian leadership initiative) we want to see metro richmond thrive - all people, in all places - for god&#39;s glory. rcli equips, connects, and mobilizes a network of gospel-centered leaders who pursue a thriving metro richmond, together. we do this primarily through our flagship, 9-month fellowship program, designed for emerging, gospel-centered leaders who want to connect their faith with the needs of metro richmond. over the course of 19 years, rcli has commissioned 17 classes with a total of 391 alumni, now leading in churches, nonprofits, business, education, philanthropy, and public office." data-categories="leadership-community">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/rcli-richmond-christian-leadership-initiative.png" alt="RCLI (Richmond Christian Leadership Initiative) logo" loading="lazy">
           <h3 class="org-name">RCLI (Richmond Christian Leadership Initiative)</h3>
@@ -136,7 +148,7 @@
           <a href="http://rcliweb.org" target="_blank" rel="noopener">rcliweb.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="arrabon arrabon is a spiritual formation ministry that equips christ-followers to actively and creatively pursue healing and reconciliation in their communities. our experiential learning opportunities, organizational engagement workshops, and spiritual formation app (apple or android) will equip you to embody and participate in god&#39;s mission of reconciliation.">
+      <article class="org-card" data-search="arrabon arrabon is a spiritual formation ministry that equips christ-followers to actively and creatively pursue healing and reconciliation in their communities. our experiential learning opportunities, organizational engagement workshops, and spiritual formation app (apple or android) will equip you to embody and participate in god&#39;s mission of reconciliation." data-categories="racial-reconciliation">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/arrabon.png" alt="Arrabon logo" loading="lazy">
           <h3 class="org-name">Arrabon</h3>
@@ -147,7 +159,7 @@
           <a href="http://arrabon.com" target="_blank" rel="noopener">arrabon.com ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="for richmond for richmond unites the church for the flourishing and transformation of metro richmond. we connect and equip christian leaders from across sectors to collaborate around the deep needs of the city, including education, foster care, and racial healing. we also mobilize the church in times of crisis to love and serve the city. the network currently consists of 220 churches, 61 nonprofits, 31 businesses, 4 county governments, 4 social service departments, and 2 school systems in richmond city, henrico, hanover, and chesterfield.">
+      <article class="org-card" data-search="for richmond for richmond unites the church for the flourishing and transformation of metro richmond. we connect and equip christian leaders from across sectors to collaborate around the deep needs of the city, including education, foster care, and racial healing. we also mobilize the church in times of crisis to love and serve the city. the network currently consists of 220 churches, 61 nonprofits, 31 businesses, 4 county governments, 4 social service departments, and 2 school systems in richmond city, henrico, hanover, and chesterfield." data-categories="leadership-community">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/for-richmond.png" alt="For Richmond logo" loading="lazy">
           <h3 class="org-name">For Richmond</h3>
@@ -158,7 +170,7 @@
           <a href="http://forrichmond.org" target="_blank" rel="noopener">forrichmond.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="the bridge rva the bridge rva is a nonprofit ministry working with marginalized children and families in richmond, virginia. our primary focus is on childhood literacy. the neighborhood literacy center provides a safe, nourishing and trauma-informed learning environment with the goal of helping children from richmond public schools achieve grade level reading by the completion of 5th grade, using a phonics-based, one-on-one, student-paced program. while our main center is located in south richmond, we desire to see neighborhood literacy centers established near underserved elementary schools throughout our city.">
+      <article class="org-card" data-search="the bridge rva the bridge rva is a nonprofit ministry working with marginalized children and families in richmond, virginia. our primary focus is on childhood literacy. the neighborhood literacy center provides a safe, nourishing and trauma-informed learning environment with the goal of helping children from richmond public schools achieve grade level reading by the completion of 5th grade, using a phonics-based, one-on-one, student-paced program. while our main center is located in south richmond, we desire to see neighborhood literacy centers established near underserved elementary schools throughout our city." data-categories="education youth-family">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/the-bridge-rva.png" alt="The Bridge RVA logo" loading="lazy">
           <h3 class="org-name">The Bridge RVA</h3>
@@ -169,7 +181,7 @@
           <a href="http://thebridgerva.com" target="_blank" rel="noopener">thebridgerva.com ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="youth impact founded in 2011, the mission of youth impact is to decrease crime, truancy, and the dropout rate by connecting youth to positive organizations. youth impact&#39;s vision is for youth to fulfill their god-given purpose here on earth. youth impact has four programs in operation: human trafficking prevention, atr dance experience, youth entrepreneurship (yinoc), and community coffee-n-conversations.">
+      <article class="org-card" data-search="youth impact founded in 2011, the mission of youth impact is to decrease crime, truancy, and the dropout rate by connecting youth to positive organizations. youth impact&#39;s vision is for youth to fulfill their god-given purpose here on earth. youth impact has four programs in operation: human trafficking prevention, atr dance experience, youth entrepreneurship (yinoc), and community coffee-n-conversations." data-categories="youth-family">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/youth-impact.png" alt="Youth Impact logo" loading="lazy">
           <h3 class="org-name">Youth Impact</h3>
@@ -180,7 +192,7 @@
           <a href="http://youthimpactrva.org" target="_blank" rel="noopener">youthimpactrva.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="encircle founded in 1888 as a lutheran orphanage, encircle has a rich history of growing to meet the needs of people who are often marginalized in our communities. in richmond we provide foster care and other services to unaccompanied immigrant children coming from the southern u.s. border. we also serve adults with developmental disabilities, place local children in foster families, and provide trauma-informed counseling to children and adults. our circle is wide, and all are included.">
+      <article class="org-card" data-search="encircle founded in 1888 as a lutheran orphanage, encircle has a rich history of growing to meet the needs of people who are often marginalized in our communities. in richmond we provide foster care and other services to unaccompanied immigrant children coming from the southern u.s. border. we also serve adults with developmental disabilities, place local children in foster families, and provide trauma-informed counseling to children and adults. our circle is wide, and all are included." data-categories="youth-family health-healing">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/encircle.png" alt="enCircle logo" loading="lazy">
           <h3 class="org-name">enCircle</h3>
@@ -191,7 +203,7 @@
           <a href="http://encircleall.org" target="_blank" rel="noopener">encircleall.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="cornelius corps cornelius corps is a faith based non-profit that focuses on the intersection of spiritual formation and racial justice. we offer a variety of online and in person classes and workshops with an emphasis on the history of race and faith in our nation in general and the civil rights movement in particular. the principles and practices of this faith based non-violent movement for justice are foundational for following god&#39;s call to racial justice today.">
+      <article class="org-card" data-search="cornelius corps cornelius corps is a faith based non-profit that focuses on the intersection of spiritual formation and racial justice. we offer a variety of online and in person classes and workshops with an emphasis on the history of race and faith in our nation in general and the civil rights movement in particular. the principles and practices of this faith based non-violent movement for justice are foundational for following god&#39;s call to racial justice today." data-categories="racial-reconciliation">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/cornelius-corps.png" alt="Cornelius Corps logo" loading="lazy">
           <h3 class="org-name">Cornelius Corps</h3>
@@ -202,7 +214,7 @@
           <a href="http://corneliuscorps.org" target="_blank" rel="noopener">corneliuscorps.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="housing opportunities made equal of virginia (home of va) for more than 50 years, we have fought for equal access to safe and stable housing in virginia. this pursuit of fair housing is the unfinished work of the civil rights movement. even as we root out bias in policies and practices today, we are also dismantling decades of injustice with long shadows that linger. we pursue a vision of inclusive communities where everyone can live and thrive through three areas of work: enforcing fair housing laws, education and counseling, and changing the law.">
+      <article class="org-card" data-search="housing opportunities made equal of virginia (home of va) for more than 50 years, we have fought for equal access to safe and stable housing in virginia. this pursuit of fair housing is the unfinished work of the civil rights movement. even as we root out bias in policies and practices today, we are also dismantling decades of injustice with long shadows that linger. we pursue a vision of inclusive communities where everyone can live and thrive through three areas of work: enforcing fair housing laws, education and counseling, and changing the law." data-categories="housing racial-reconciliation">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/housing-opportunities-made-equal-of-virginia-home-of-va.png" alt="Housing Opportunities Made Equal of Virginia (HOME of VA) logo" loading="lazy">
           <h3 class="org-name">Housing Opportunities Made Equal of Virginia (HOME of VA)</h3>
@@ -213,7 +225,7 @@
           <a href="https://homeofva.org/" target="_blank" rel="noopener">homeofva.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="cristo rey richmond high school cristo rey richmond is an inclusive catholic learning community that educates young people of limited economic means to become men and women of faith, purpose, and service. through a rigorous college preparatory curriculum, integrated with a relevant work study experience, students graduate ready to succeed in college and in life.">
+      <article class="org-card" data-search="cristo rey richmond high school cristo rey richmond is an inclusive catholic learning community that educates young people of limited economic means to become men and women of faith, purpose, and service. through a rigorous college preparatory curriculum, integrated with a relevant work study experience, students graduate ready to succeed in college and in life." data-categories="education">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/cristo-rey-richmond-high-school.png" alt="Cristo Rey Richmond High School logo" loading="lazy">
           <h3 class="org-name">Cristo Rey Richmond High School</h3>
@@ -224,7 +236,7 @@
           <a href="http://cristoreyrichmond.org" target="_blank" rel="noopener">cristoreyrichmond.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="help1rva (ymca of greater richmond) help1rva is a collaborative effort to improve the well-being of greater richmond community members through connections to resources for social needs. the ymca of greater richmond and richmond city lead help1rva with a steering committee of cross-sector partners throughout greater richmond, working to progress community members from crisis to thriving - building a process to obtain resources, an environment to navigate that process, and a pathway for community-based organizations to collaborate.">
+      <article class="org-card" data-search="help1rva (ymca of greater richmond) help1rva is a collaborative effort to improve the well-being of greater richmond community members through connections to resources for social needs. the ymca of greater richmond and richmond city lead help1rva with a steering committee of cross-sector partners throughout greater richmond, working to progress community members from crisis to thriving - building a process to obtain resources, an environment to navigate that process, and a pathway for community-based organizations to collaborate." data-categories="basic-needs">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/help1rva-ymca-of-greater-richmond.png" alt="Help1RVA (YMCA of Greater Richmond) logo" loading="lazy">
           <h3 class="org-name">Help1RVA (YMCA of Greater Richmond)</h3>
@@ -235,7 +247,7 @@
           <a href="http://ymcarichmond.org/help1rva" target="_blank" rel="noopener">ymcarichmond.org/help1rva ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="sunodia prayer counseling sunodia prayer counseling is a richmond-based ministry offering pastoral care to christians needing inner healing. through prayer, we help people connect to god, who alone can communicate the truth of their heart issues in a way that is loving and unique to them. our mission is to serve the church and help heal the brokenhearted and bind up their wounds (psalm 147:3).">
+      <article class="org-card" data-search="sunodia prayer counseling sunodia prayer counseling is a richmond-based ministry offering pastoral care to christians needing inner healing. through prayer, we help people connect to god, who alone can communicate the truth of their heart issues in a way that is loving and unique to them. our mission is to serve the church and help heal the brokenhearted and bind up their wounds (psalm 147:3)." data-categories="health-healing">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/sunodia-prayer-counseling.png" alt="Sunodia Prayer Counseling logo" loading="lazy">
           <h3 class="org-name">Sunodia Prayer Counseling</h3>
@@ -246,7 +258,7 @@
           <a href="http://sunodia.org" target="_blank" rel="noopener">sunodia.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="renewing rva renewing rva&#39;s purpose is to provide high-quality, medical mental health services in conjunction with biblical prayer ministry for the spiritual, mental, and physical flourishing of clients in need. biblical prayer ministry uses intercessory prayer as a tool to help clients understand and find healing for the causes of present day emotional distress. serving children, adolescents, and adults, we accept medicaid, several commercial insurance plans, and provide financial assistance for those in need. renewing rva is also the fiscal agent of the one day, one step annual event.">
+      <article class="org-card" data-search="renewing rva renewing rva&#39;s purpose is to provide high-quality, medical mental health services in conjunction with biblical prayer ministry for the spiritual, mental, and physical flourishing of clients in need. biblical prayer ministry uses intercessory prayer as a tool to help clients understand and find healing for the causes of present day emotional distress. serving children, adolescents, and adults, we accept medicaid, several commercial insurance plans, and provide financial assistance for those in need. renewing rva is also the fiscal agent of the one day, one step annual event." data-categories="health-healing">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/renewing-rva.png" alt="Renewing RVA logo" loading="lazy">
           <h3 class="org-name">Renewing RVA</h3>
@@ -257,7 +269,7 @@
           <a href="http://renewingrva.org" target="_blank" rel="noopener">renewingrva.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="coming together virginia coming together virginia is a 501c3 non-profit focused on a vision of a racially healed world. we make a difference through allyship, connecting other nonprofit partners, faith-based organizations, and the community to bring intentional conversations to the forefront using a race and equity lens. by hosting facilitated dinner gatherings monthly, we focus on truth-telling in history, building inclusive relationships, healing historical wounds, and taking informed action.">
+      <article class="org-card" data-search="coming together virginia coming together virginia is a 501c3 non-profit focused on a vision of a racially healed world. we make a difference through allyship, connecting other nonprofit partners, faith-based organizations, and the community to bring intentional conversations to the forefront using a race and equity lens. by hosting facilitated dinner gatherings monthly, we focus on truth-telling in history, building inclusive relationships, healing historical wounds, and taking informed action." data-categories="racial-reconciliation">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/coming-together-virginia.png" alt="Coming Together Virginia logo" loading="lazy">
           <h3 class="org-name">Coming Together Virginia</h3>
@@ -268,7 +280,7 @@
           <a href="http://comingtogethervirginia.org" target="_blank" rel="noopener">comingtogethervirginia.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="richmond hill richmond hill is a spiritual retreat center, residential community, and ecumenical christian fellowship praying for the racial healing of metropolitan richmond. our work is focused on unearthing and naming the pains of the past and the present; advocating for a just and equitable society; collaborating with allies and activists and creating a stronger community for present and future generations.">
+      <article class="org-card" data-search="richmond hill richmond hill is a spiritual retreat center, residential community, and ecumenical christian fellowship praying for the racial healing of metropolitan richmond. our work is focused on unearthing and naming the pains of the past and the present; advocating for a just and equitable society; collaborating with allies and activists and creating a stronger community for present and future generations." data-categories="racial-reconciliation">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/richmond-hill.png" alt="Richmond Hill logo" loading="lazy">
           <h3 class="org-name">Richmond Hill</h3>
@@ -279,7 +291,7 @@
           <a href="http://richmondhillva.org" target="_blank" rel="noopener">richmondhillva.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="justice fast rva the purpose of the justice fast is to begin an ongoing process of spiritual discipline to increase our passion for god&#39;s desire for comprehensive justice through prayer, fasting, and acts of mercy. during a 40 day period, participants are emailed a daily devotion and suggested prayer points; together we unite in prayer for justice for our city. participants fast from something they usually take pleasure in and donate the money they would normally spend on that activity to the justice fast.">
+      <article class="org-card" data-search="justice fast rva the purpose of the justice fast is to begin an ongoing process of spiritual discipline to increase our passion for god&#39;s desire for comprehensive justice through prayer, fasting, and acts of mercy. during a 40 day period, participants are emailed a daily devotion and suggested prayer points; together we unite in prayer for justice for our city. participants fast from something they usually take pleasure in and donate the money they would normally spend on that activity to the justice fast." data-categories="racial-reconciliation">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/justice-fast-rva.png" alt="Justice Fast RVA logo" loading="lazy">
           <h3 class="org-name">Justice Fast RVA</h3>
@@ -290,7 +302,7 @@
           <a href="https://justicefastrva.org/" target="_blank" rel="noopener">justicefastrva.org ↗</a>
         </div>
       </article>
-      <article class="org-card" data-search="christian community development association (ccda) the annual conference has been inspiring, training, and connecting christians for close to 40 years. join us in richmond, virginia, from october 7-10, 2026, for amazing speakers, workshops, worship, networking sessions, and more! whether you&#39;re new to christian community development or a seasoned practitioner, there is a place for you at the ccda conference.">
+      <article class="org-card" data-search="christian community development association (ccda) the annual conference has been inspiring, training, and connecting christians for close to 40 years. join us in richmond, virginia, from october 7-10, 2026, for amazing speakers, workshops, worship, networking sessions, and more! whether you&#39;re new to christian community development or a seasoned practitioner, there is a place for you at the ccda conference." data-categories="leadership-community">
         <div class="org-head">
           <img class="org-logo" src="images/orgs/christian-community-development-association-ccda.png" alt="Christian Community Development Association (CCDA) logo" loading="lazy">
           <h3 class="org-name">Christian Community Development Association (CCDA)</h3>
@@ -369,9 +381,8 @@
       <div class="name">Lauren Comet</div>
       <div class="name">Liz Wiebe</div>
       <div class="name">Marcellus Wright</div>
-      <div class="name">Marsha Miler</div>
+      <div class="name">Marsha Miller</div>
       <div class="name">Marvin Daniel</div>
-      <div class="name">Meghan Waters</div>
       <div class="name">Mt. Gilead Full Gospel International Ministries</div>
       <div class="name">Mt. Gilead Intercessory Prayer Team</div>
       <div class="name">Nancy Hendrickson</div>
@@ -387,7 +398,6 @@
       <div class="name">St. Paul's Episcopal Church</div>
       <div class="name">Susan Bland</div>
       <div class="name">Rev. Tom Baynham</div>
-      <div class="name">Rev. Marvin</div>
     </div>
   </div>
 </section>
@@ -462,7 +472,7 @@
       <div class="card">
         <p class="card-title">Justice Fast RVA</p>
         <p class="card-date mono">SEPT 8 &ndash; OCT 17, 2026</p>
-        <p>Praying and fasting for justice and healing in our city.</p>
+        <p>Praying and fasting for justice and healing in our city. 2026 proceeds benefit nonprofits fighting food insecurity in our area.</p>
         <a class="card-link mono" href="https://justicefastrva.org/" target="_blank" rel="noopener">Learn more &rarr;</a>
       </div>
       <div class="card">
@@ -504,23 +514,29 @@
 <script>
 (function(){
   var input = document.getElementById('search');
+  var categorySelect = document.getElementById('category-filter');
   var cards = Array.prototype.slice.call(document.querySelectorAll('.org-card'));
   var empty = document.getElementById('empty-state');
   var count = document.getElementById('result-count');
 
   function render(){
     var q = input.value.trim().toLowerCase();
+    var cat = categorySelect.value;
     var visible = 0;
     cards.forEach(function(card){
-      var match = !q || (card.getAttribute('data-search') || '').indexOf(q) !== -1;
+      var textMatch = !q || (card.getAttribute('data-search') || '').indexOf(q) !== -1;
+      var cardCats = ' ' + (card.getAttribute('data-categories') || '') + ' ';
+      var catMatch = !cat || cardCats.indexOf(' ' + cat + ' ') !== -1;
+      var match = textMatch && catMatch;
       card.classList.toggle('is-hidden', !match);
       if (match) visible++;
     });
     empty.classList.toggle('show', visible === 0);
-    count.textContent = q ? (visible + ' of ' + cards.length + ' shown') : '';
+    count.textContent = (q || cat) ? (visible + ' of ' + cards.length + ' shown') : '';
   }
 
   input.addEventListener('input', render);
+  categorySelect.addEventListener('change', render);
   render();
 
   // Collapsible org descriptions: hide the toggle on cards short enough

@@ -616,6 +616,12 @@ header.hero-monument::after{
 
 /* ---------- Search (Repair Fair directory) ---------- */
 .search-block{ padding-top: 8px; padding-bottom: 8px; }
+.search-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: stretch;
+}
 .search-box{
   display: flex;
   align-items: center;
@@ -625,6 +631,8 @@ header.hero-monument::after{
   border-radius: 3px;
   padding: 10px 16px;
   max-width: 480px;
+  flex: 1;
+  min-width: 220px;
 }
 .search-box svg{ flex: none; opacity: 0.6; color: var(--ink-faint); }
 .search-box input{
@@ -637,6 +645,18 @@ header.hero-monument::after{
   width: 100%;
 }
 .search-box input::placeholder{ color: var(--ink-faint); }
+.category-select{
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 10px 14px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  color: var(--ink);
+  cursor: pointer;
+  min-width: 200px;
+}
+.category-select:focus-visible{ outline: 2px solid var(--thread); outline-offset: 2px; }
 #result-count{
   font-family: "IBM Plex Mono", monospace;
   font-size: 12.5px;

@@ -10,7 +10,7 @@ $cards = New-Object System.Text.StringBuilder
 foreach ($o in $orgs) {
   $searchBits = (Enc($o.name)) + " " + (Enc($o.desc))
   $searchAttr = $searchBits.ToLower()
-  [void]$cards.AppendLine("      <article class=`"org-card`" data-search=`"$searchAttr`">")
+  [void]$cards.AppendLine("      <article class=`"org-card`" data-search=`"$searchAttr`" data-categories=`"$($o.categories)`">")
   [void]$cards.AppendLine("        <div class=`"org-head`">")
   [void]$cards.AppendLine("          <img class=`"org-logo`" src=`"images/orgs/$($o.logoFile)`" alt=`"$(Enc($o.name)) logo`" loading=`"lazy`">")
   [void]$cards.AppendLine("          <h3 class=`"org-name`">$(Enc($o.name))</h3>")
@@ -71,9 +71,21 @@ $page = @"
 </nav>
 
 <div class="wrap search-block">
-  <div class="search-box">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input id="search" type="text" placeholder="Search by name, focus area, or keyword&hellip;" aria-label="Search organizations">
+  <div class="search-row">
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search" type="text" placeholder="Search by name, focus area, or keyword&hellip;" aria-label="Search organizations">
+    </div>
+    <select id="category-filter" class="category-select" aria-label="Filter by category">
+      <option value="">All Categories</option>
+      <option value="education">Education</option>
+      <option value="housing">Housing</option>
+      <option value="health-healing">Health &amp; Healing</option>
+      <option value="basic-needs">Basic Needs</option>
+      <option value="youth-family">Youth &amp; Family</option>
+      <option value="racial-reconciliation">Racial Reconciliation &amp; Justice</option>
+      <option value="leadership-community">Leadership &amp; Community</option>
+    </select>
   </div>
   <p id="result-count" class="mono"></p>
 </div>
@@ -156,9 +168,8 @@ $cardsHtml    </div>
       <div class="name">Lauren Comet</div>
       <div class="name">Liz Wiebe</div>
       <div class="name">Marcellus Wright</div>
-      <div class="name">Marsha Miler</div>
+      <div class="name">Marsha Miller</div>
       <div class="name">Marvin Daniel</div>
-      <div class="name">Meghan Waters</div>
       <div class="name">Mt. Gilead Full Gospel International Ministries</div>
       <div class="name">Mt. Gilead Intercessory Prayer Team</div>
       <div class="name">Nancy Hendrickson</div>
@@ -174,7 +185,6 @@ $cardsHtml    </div>
       <div class="name">St. Paul's Episcopal Church</div>
       <div class="name">Susan Bland</div>
       <div class="name">Rev. Tom Baynham</div>
-      <div class="name">Rev. Marvin</div>
     </div>
   </div>
 </section>
@@ -249,7 +259,7 @@ $cardsHtml    </div>
       <div class="card">
         <p class="card-title">Justice Fast RVA</p>
         <p class="card-date mono">SEPT 8 &ndash; OCT 17, 2026</p>
-        <p>Praying and fasting for justice and healing in our city.</p>
+        <p>Praying and fasting for justice and healing in our city. 2026 proceeds benefit nonprofits fighting food insecurity in our area.</p>
         <a class="card-link mono" href="https://justicefastrva.org/" target="_blank" rel="noopener">Learn more &rarr;</a>
       </div>
       <div class="card">
@@ -291,23 +301,29 @@ $cardsHtml    </div>
 <script>
 (function(){
   var input = document.getElementById('search');
+  var categorySelect = document.getElementById('category-filter');
   var cards = Array.prototype.slice.call(document.querySelectorAll('.org-card'));
   var empty = document.getElementById('empty-state');
   var count = document.getElementById('result-count');
 
   function render(){
     var q = input.value.trim().toLowerCase();
+    var cat = categorySelect.value;
     var visible = 0;
     cards.forEach(function(card){
-      var match = !q || (card.getAttribute('data-search') || '').indexOf(q) !== -1;
+      var textMatch = !q || (card.getAttribute('data-search') || '').indexOf(q) !== -1;
+      var cardCats = ' ' + (card.getAttribute('data-categories') || '') + ' ';
+      var catMatch = !cat || cardCats.indexOf(' ' + cat + ' ') !== -1;
+      var match = textMatch && catMatch;
       card.classList.toggle('is-hidden', !match);
       if (match) visible++;
     });
     empty.classList.toggle('show', visible === 0);
-    count.textContent = q ? (visible + ' of ' + cards.length + ' shown') : '';
+    count.textContent = (q || cat) ? (visible + ' of ' + cards.length + ' shown') : '';
   }
 
   input.addEventListener('input', render);
+  categorySelect.addEventListener('change', render);
   render();
 
   // Collapsible org descriptions: hide the toggle on cards short enough
