@@ -182,6 +182,15 @@ nav.site .wrap{
 }
 .site-cta:hover{ background: var(--thread); color: var(--paper); }
 
+.back-link{
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.back-link:hover{ color: var(--accent); }
+
 @media (max-width: 760px){
   nav.site .wrap{ flex-wrap: wrap; }
   .site-links{ order: 3; width: 100%; overflow-x: auto; padding-top: 4px; }
