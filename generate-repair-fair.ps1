@@ -15,7 +15,8 @@ foreach ($o in $orgs) {
   [void]$cards.AppendLine("          <img class=`"org-logo`" src=`"images/orgs/$($o.logoFile)`" alt=`"$(Enc($o.name)) logo`" loading=`"lazy`">")
   [void]$cards.AppendLine("          <h3 class=`"org-name`">$(Enc($o.name))</h3>")
   [void]$cards.AppendLine("        </div>")
-  [void]$cards.AppendLine("        <p class=`"org-desc`">$(Enc($o.desc))</p>")
+  $descHtml = (Enc($o.desc)) -replace 'danthebookman@gmail\.com', '<a href="mailto:danthebookman@gmail.com">danthebookman@gmail.com</a>'
+  [void]$cards.AppendLine("        <p class=`"org-desc`">$descHtml</p>")
   [void]$cards.AppendLine("        <button class=`"org-toggle`" type=`"button`">Read more +</button>")
   [void]$cards.AppendLine("        <div class=`"org-links`">")
   foreach ($l in $o.links) {
@@ -126,7 +127,7 @@ $cardsHtml    </div>
       <span class="pill">RCLI</span>
       <span class="pill">Renewing RVA</span>
       <span class="pill">Richmond Hill</span>
-      <span class="pill">St Giles Church</span>
+      <span class="pill">St. Giles Presbyterian Church</span>
       <span class="pill">St. Paul's Episcopal Church</span>
       <span class="pill">Third Church</span>
     </div>
@@ -140,7 +141,6 @@ $cardsHtml    </div>
     </div>
     <p class="section-note">To the volunteers, clergy, organizers, and neighbors who made Repair Fair possible.</p>
     <div class="honor-roll">
-      <div class="name">Blessing of Descendants</div>
       <div class="name">Abigail George</div>
       <div class="name">Alana Smith</div>
       <div class="name">Alan Dennison</div>
@@ -264,7 +264,7 @@ $cardsHtml    </div>
       <div class="card">
         <p class="card-title">Justice Fast RVA</p>
         <p class="card-date mono">SEPT 8 &ndash; OCT 17, 2026</p>
-        <p>Praying and fasting for justice and healing in our city. 2026 proceeds benefit nonprofits fighting food insecurity in our area.</p>
+        <p>Praying and fasting for justice and healing in our city. 2026 proceeds benefit nonprofits fighting food insecurity in our area. To sign up, email Dan at <a href="mailto:danthebookman@gmail.com">danthebookman@gmail.com</a>.</p>
         <a class="card-link mono" href="https://justicefastrva.org/" target="_blank" rel="noopener">Learn more &rarr;</a>
       </div>
       <div class="card">
